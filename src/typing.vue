@@ -35,7 +35,8 @@ export default {
     typing: bool.required,
     handleInsert: func.required,
     handleRemove: func.required,
-    activeOther: func.required
+    activeOther: func.required,
+    tagCreateKeyCode: num.required
   },
   data() {
     return {
@@ -99,7 +100,7 @@ export default {
         let index = this.index - 1
         this.handleRemove(index)
         this.activeOther(index)
-      } else if (key === KEY_CODE.TAB) {
+      } else if (key === this.tagCreateKeyCode) {
         let index = this.index + 1
         this.addTag() && this.$nextTick(() => this.activeOther(index))
       } else native = true

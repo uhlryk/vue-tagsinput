@@ -26,6 +26,7 @@
 ## Props
 - tags(array\<{ text: string, readOnly: ?boolean, invalid: ?boolean }>, required):
 your tags to render
+- tagCreateKeyCode(number) keyboard key code for trigger tag creation
 - placeholder(string): a hint to the user
 - klass(object): override the class name (see below)
 
