@@ -3,6 +3,7 @@
     <template v-for="(item, index) in normalizeTagItems">
       <typing
         :index="index"
+        :tagCreateKeyCode="tagCreateKeyCode"
         :typing="index === typingIndex"
         :handle-insert="insertTag"
         :handle-remove="removeTag"
@@ -37,8 +38,8 @@
 }
 </style>
 <script>
-import {arr, obj} from 'vuept'
-import { klass } from './lib'
+import {arr, obj, num} from 'vuept'
+import { klass, KEY_CODE } from './lib'
 export default {
   props: {
     /**
@@ -49,6 +50,7 @@ export default {
      * }>
      */
     tags: arr.required,
+    tagCreateKeyCode: num.default(() => KEY_CODE.TAB),
     placeholder: String,
     klass: obj.default(() => klass),
   },
